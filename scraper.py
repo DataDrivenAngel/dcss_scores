@@ -8,12 +8,12 @@ import datetime
 
 n = 0
 
-# while the election is not over:
-while datetime.date.today().timetuple().tm_yday < datetime.date(2020,11,3).timetuple().tm_yday:
+# while the tournament is not over:
+while datetime.date.today().timetuple().tm_yday < datetime.date(2023,5,22).timetuple().tm_yday:
 
     
     #get the webpage
-    url = 'https://www2.montgomerycountymd.gov/mcgportalapps/ElectionLocation.aspx?EarlyVoting=1&flag=1'
+    url = 'https://crawl.develz.org/tournament/0.30/all-players-ranks.html'
     r = re.get(url)
     soup = BeautifulSoup(r.content, 'lxml')
 
@@ -39,4 +39,4 @@ while datetime.date.today().timetuple().tm_yday < datetime.date(2020,11,3).timet
     #wait 5 minutes (5x60 seconds)
     time.sleep(5*60)
 
-print("the election is over")
+print("the tournament is over")
